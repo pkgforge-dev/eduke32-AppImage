@@ -13,12 +13,9 @@ license=('GPL' 'custom: BUILD')
 options=('!debug' 'strip')
 depends=('libvpx' 'sdl2' 'flac' 'libvorbis' 'alsa-lib')
 makedepends=('mesa' 'glu')
-depends_i686=('lib32-alsa-lib')
-makedepends_i686=('nasm')
 optdepends=('freepats-general-midi: a free soundfont for music'
             'fluidsynth: alternative midi sequencer'
             'eduke32-shareware-episode: Duke Nukem 3D Demo')
-install=$pkgname.install
 source=("http://dukeworld.com/$pkgname/synthesis/$_pkgdate-$_pkgrev/eduke32_src_$_pkgdate-$_pkgrev.tar.xz"
         "$pkgname.desktop")
 sha256sums=('2ae33cb4edbf27df758a9ea23954166ccc616f41825d0ae8e1aedba6b20789ca'
