@@ -11,6 +11,7 @@ export UPINFO="gh-releases-zsync|${GITHUB_REPOSITORY%/*}|${GITHUB_REPOSITORY#*/}
 export ICON=/usr/share/pixmaps/eduke32.ico
 export DESKTOP=eduke32.desktop
 export DEPLOY_OPENGL=1
+export DEPLOY_VULKAN=1
 export DEPLOY_PIPEWIRE=1
 
 # Deploy dependencies
