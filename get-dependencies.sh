@@ -18,7 +18,8 @@ echo "---------------------------------------------------------------"
 get-debloated-pkgs --add-common --prefer-nano
 
 # Comment this out if you need an AUR package
-make-aur-package gtk2 sdl2
+make-aur-package gtk2
+make-aur-package sdl2
 
 # If the application needs to be manually built that has to be done down here
 
@@ -28,7 +29,7 @@ REPO="http://dukeworld.com/eduke32/synthesis/20251111-10652-39967d866/eduke32_sr
 wget "$REPO"
 
 tar -xvf ./eduke32_src_20251111-10652-39967d866.tar.xz
-ls
+rm -f ./*.xz
 cd eduke32_20251111-10652-39967d866
 make PACKAGE_REPOSITORY=1 VC_REV=10652-39967d866 -j $(nproc)
 
