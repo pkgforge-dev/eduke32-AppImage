@@ -26,10 +26,13 @@ make-aur-package sdl2
 echo "Building EDuke32..."
 echo "---------------------------------------------------------------"
 REPO="http://dukeworld.com/eduke32/synthesis/20251111-10652-39967d866/eduke32_src_20251111-10652-39967d866.tar.xz"
-wget "$REPO"
+wget --retry-connrefused --tries=30 "$REPO" -O /tmp/app.tar.xz 2>/tmp/download.log; then
+	cat /tmp/download.log
+	exit 1
 
-tar -xvf ./eduke32_src_20251111-10652-39967d866.tar.xz
-rm -f ./*.xz
+#tar -xvf ./eduke32_src_20251111-10652-39967d866.tar.xz
+tar -xvf /tmp/app .
+#rm -f ./*.xz
 cd eduke32_20251111-10652-39967d866
 make PACKAGE_REPOSITORY=1 VC_REV=10652-39967d866 -j $(nproc)
 
@@ -39,3 +42,5 @@ install -m755 eduke32 mapster32 /usr/bin
 install -Dm644 package/common/buildlic.txt /usr/share/licenses/eduke32/buildlic.txt
 install -Dm644 source/duke3d/rsrc/game_icon.ico /usr/share/pixmaps/eduke32.ico
 install -Dm644 ../eduke32.desktop /usr/share/applications/eduke32.desktop
+
+awk -F'/' '/Location:/{print $(NF-1); exit}' /tmp/download.log > ~/version
