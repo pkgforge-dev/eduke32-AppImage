@@ -17,8 +17,8 @@
 
 </div>
 
-## ⚠️ Game assets go inside `~/.config/eduke32` \
-To use soundfonts copy to same folder or `ln -s /usr/share/soundfonts/sfname.sf2 ~/.config/eduke32/sfname.sf2` ⚠️
+## ⚠️ Game assets go inside `~/.config/eduke32`
+## To use soundfonts copy to same folder or `ln -s /usr/share/soundfonts/sfname.sf2 ~/.config/eduke32/sfname.sf2` ⚠️
 
 ---
 
