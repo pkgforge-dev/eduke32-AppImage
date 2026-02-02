@@ -12,9 +12,6 @@ pacman -Syu --noconfirm \
 	glu       \
     libvorbis \
     libvpx
-	#gcr	  \
-	#gd		  \
-	#libxaw
 
 echo "Installing debloated packages..."
 echo "---------------------------------------------------------------"
