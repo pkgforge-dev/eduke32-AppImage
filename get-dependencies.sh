@@ -33,7 +33,7 @@ echo $BVER > ~/version
 tar -xvf ./eduke32_src_$BVER.tar.xz
 rm -f ./*.xz
 cd eduke32_$BVER
-make PACKAGE_REPOSITORY=1 VC_REV=10652-39967d866 -j $(nproc)
+make PACKAGE_REPOSITORY=1 VC_REV=10652-39967d866 -j$(nproc)
 
 # install binaries, buildlicense, icon and desktop files
 install -d /usr/bin
