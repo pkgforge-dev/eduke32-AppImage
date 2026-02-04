@@ -33,8 +33,6 @@ rm -f ./*.xz
 cd eduke32_$BVER
 make PACKAGE_REPOSITORY=1 VC_REV=10652-39967d866 -j$(nproc)
 
-# install binaries, buildlicense, icon and desktop files
-install -d /usr/bin
-install -m755 eduke32 mapster32 /usr/bin
-install -Dm644 package/common/buildlic.txt /usr/share/licenses/eduke32/buildlic.txt
-install -Dm644 source/duke3d/rsrc/game_icon.ico /usr/share/pixmaps/eduke32.ico
+mkdir -p /usr/bin
+mv -v eduke32 mapster32 /usr/bin
+cp -r source/duke3d/rsrc/game_icon.ico /usr/share/pixmaps/eduke32.ico
